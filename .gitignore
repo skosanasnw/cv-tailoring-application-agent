@@ -1,0 +1,19 @@
+# Credentials
+.env
+
+# Private Data (The agent will use these, but they stay local)
+*.docx
+*.pdf
+job_screenshots/
+Generated_Docs/
+*.csv
+
+# Python
+__pycache__/
+venv/
+.pytest_cache/venv
+.env
+__pycache__/
+*.png
+.env
+__pycache__/

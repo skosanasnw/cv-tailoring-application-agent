@@ -1,0 +1,6 @@
+google-genai
+docx2python
+pandas
+GitPython
+python-dotenv
+pytest
