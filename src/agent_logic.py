@@ -22,39 +22,39 @@ class JobTailorAgent:
         with open(screenshot_path, "rb") as f:
             image_bytes = f.read()
 
-        # Build the agent prompt
-        # Use a sinlge multi-modal turn to save latency and cost
-        prompt = f"""
-        CONTEXT:
-        Master CV Content: {master_cv_text}
+        # Force the AI to include 'metadata'
+        response_schema = {
+            "type": "OBJECT",
+            "properties":{
+                "metadata": {
+                    "type": "STRING",
+                    "description": "Format: Company|Role|Score (Score) (e.g., Google|Python Dev|85)"
+                },
+                "cv_content": {
+                    "type": "STRING",
+                    "description": "The full tailored CV in Markdown format"
+                }
+            },
+            "required": ["metadata", "cv_content"]
+        }
 
-        TASK:
-        1. Examine the attached LinkedIn job description image.
-        2. Identify the Company Name and Role Title
-        3. Conduct a sementic keyword gap analysis between my CV and this JD.
-        4. Rewrite the CV into a professional Markdown format.
-        5. Generate 5 intervieew questions and an ATS Match Score.
-
-        OUT FORMAT:
-        Please separate sections with '==Section_Break=='
-        Order: [Metadata (Company|Role)] , [Tailored CV] , [Interview Prep & ATS Score]
-        """
-
-        # Call Gemini 3 with 'High' thinking level for deep reasoning
+        # Call Gemini 3 and set thinking level and factuality
         response = self.client.models.generate_content(
             model=self.modal_id,
             config=types.GenerateContentConfig(
-                thinking_config=types.ThinkingConfig(
-                    thinking_level=types.ThinkingLevel.MINIMAL
+                response_mime_type="application/json",
+                response_schema=response_schema,
+                temperature=0.1
                 ),
-                temperature=0.1 # Focuses AI on the facts
-            ),
-            contents=[
-                types.Part.from_bytes(data=image_bytes, mime_type="image/png"),
-                prompt
-            ]
+                contents=[
+                    types.Part.from_bytes(data=image_bytes, mime_type="image/png"),
+                    f"Tailor this CV to the job in the image: {master_cv_text}"
+                ]
         )
-        return self._parse_response(response.text)
+
+        # Directly return the parsed dictionary
+        return response.parsed
+
 
     def _parse_response(self, raw_text: str):
         parts = raw_text.split("SECTION_BREAK")
