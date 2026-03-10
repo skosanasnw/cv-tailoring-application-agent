@@ -29,5 +29,5 @@ def git_push_updates(repo_path: str, message: str):
     repo = Repo(repo_path)
     repo.git.add(all=True)
     repo.index.commit(message)
-    origin = repo.remote(name='origin')
-    origin.push()
+    # origin = repo.remote(name='origin')
+    # origin.push()
