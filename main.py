@@ -22,7 +22,7 @@ def main():
 
         # Save generated files
         # (Using a simple split for metadata, e.g., 'Google|AI_Engineer')
-        meta_parts = result['metadata'].split("|")
+        meta_parts = result['cv_md'].split("|")
         company = meta_parts[0] if len(meta_parts) > 0 else "Unkown"
         role = meta_parts[1] if len(meta_parts) > 1 else "Role"
 

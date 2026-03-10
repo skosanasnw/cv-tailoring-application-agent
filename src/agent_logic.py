@@ -30,12 +30,12 @@ class JobTailorAgent:
                     "type": "STRING",
                     "description": "Format: Company|Role|Score (Score) (e.g., Google|Python Dev|85)"
                 },
-                "cv_content": {
+                "cv_md": {
                     "type": "STRING",
                     "description": "The full tailored CV in Markdown format"
                 }
             },
-            "required": ["metadata", "cv_content"]
+            "required": ["metadata", "cv_md"]
         }
 
         # Call Gemini 3 and set thinking level and factuality
