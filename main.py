@@ -38,7 +38,7 @@ def main():
 
         # Create a clean filename
         raw_name = f"{company}_{role}"
-        clean_name = re.sub(r'[^a-zA-Z0-9]', '_', raw_name).strip('_').low()
+        clean_name = re.sub(r'[^a-zA-Z0-9]', '_', raw_name).strip('_').lower()
         filename = f"{clean_name}.md"
         filepath = os.path.join(output_dir, filename)
 
@@ -52,7 +52,7 @@ def main():
             # Log it only if written succeeded
             log_to_csv("Application_Tracker.csv", company, role, "Tailored CV Generated")
 
-        except Expeption as e:
+        except Exception as e:
             print(f"❌ FAILED to write file: {filename}: {e}")
 
     # 3. Final GIT Sync (Only code and CSV log)
