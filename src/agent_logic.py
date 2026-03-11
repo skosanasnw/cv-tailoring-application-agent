@@ -12,28 +12,40 @@ class JobTailorAgent:
         self.client = genai.Client(api_key=api_key)
         self.modal_id = "gemini-3.1-flash-lite-preview"
 
-    def analyze_and_tailor(self, master_cv_text: str, screenshot_path: str):
+    def analyze_and_tailor(self, master_cv_text: str, source: str, is_image: bool = True):
         """
         Extracts Job description from a screenshot, identifies gaps, and rewrites
         the CV.
         Returns a dictionary containing the tailored CV and interview prep.
         """
-        # Read the image bytes
-        with open(screenshot_path, "rb") as f:
-            image_bytes = f.read()
-
+        # Prepare the Parts list
+        if is_image:
+            with open(source, "rb") as f:
+                image_bytes = f.read()
+            # If is image, send bytes
+            content_parts = [
+                types.Part.from_bytes(data=image_bytes, mime_type="image/png"),
+                f"Tailor this CV to the job in the image. Master CV: {master_cv_text}"
+            ]
+        else:
+            # If it's text (from .txt), we just send strings
+            content_parts = [
+                f"Job Description: {source}",
+                f"Tailor this CV to the job description above. Master CV: {master_cv_text}"
+            ]
         # Force the AI to include 'metadata'
         response_schema = {
             "type": "OBJECT",
             "properties":{
                 "metadata": {
-                    "type": "STRING",
-                    "description": "Format: Company|Role|Score (Score) (e.g., Google|Python Dev|85)"
+                    "type": "OBJECT",
+                    "properties": {
+                        "company":{"type": "STRING"},
+                        "role": {"type": "STRING"}
+                    },
+                    "required": ["company", "role"]
                 },
-                "cv_md": {
-                    "type": "STRING",
-                    "description": "The full tailored CV in Markdown format"
-                }
+                "cv_md": {"type": "STRING"},
             },
             "required": ["metadata", "cv_md"]
         }
@@ -46,25 +58,8 @@ class JobTailorAgent:
                 response_schema=response_schema,
                 temperature=0.1
                 ),
-                contents=[
-                    types.Part.from_bytes(data=image_bytes, mime_type="image/png"),
-                    f"Tailor this CV to the job in the image: {master_cv_text}"
-                ]
+                contents=content_parts
         )
 
         # Directly return the parsed dictionary
         return response.parsed
-
-
-    def _parse_response(self, raw_text: str):
-        parts = raw_text.split("SECTION_BREAK")
-        # Handle edge case if Gemini fails to split correctly
-        if len(parts) < 3:
-            return {"error": "Incomplete generation", "raw": raw_text}
-
-        # .strip(" =") removes ANY combination of '=' and ' ' from the ends
-        return {
-            "metadata": parts[0].strip().rstrip("="),
-            "cv_md": parts[1].strip(" ="),
-            "prep_md": parts[2].strip(" =")
-        }

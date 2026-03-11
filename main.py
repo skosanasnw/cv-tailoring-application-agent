@@ -19,20 +19,31 @@ def main():
     if not os.path.exists(shot_dir):
         os.makedirs(shot_dir)
         print(f"Created {shot_dir} folder. Please add your screenshot there.")
-
-    screenshots = [f for f in os.listdir(shot_dir) if f.lower().endswith((".png", ".jpg", "jpeg"))]
-
+    
+    screenshots = [f for f in os.listdir(shot_dir) if f.lower().endswith((".png", ".jpg", ".jpeg", ".txt"))]
+    
+    if not screenshots:
+        print(f"No files found in {shot_dir}. Please add job description (images or text).")
+        return 
     for shot in screenshots:
         print(f"\n--- Processing {shot} ---")
-        # The agent returns a dictionary (the JSON response)
-        result = agent.analyze_and_tailor(master_text, os.path.join(shot_dir, shot))
-
-        # Setup Output Dictionary
+        filepath = os.path.join(shot_dir, shot)
+        
+        # Check if it is text or image
+        if shot.lower().endswith(".txt"):
+            with open(filepath, "r", encoding="utf-8") as f:
+                job_description = f.read()
+            # Passing text to agent
+            result = agent.analyze_and_tailor(master_text, job_description, is_image=False)
+        else:
+            # Passing image path to agent
+            result = agent.analyze_and_tailor(master_text, filepath, is_image=True)
+        
         output_dir = "output/cvs"
         os.makedirs(output_dir, exist_ok=True)
 
         # Extract Data and Sanitize Filename
-        meta_parts = result.get('metadata', {})
+        metadata = result.get('metadata', {})
         company = metadata.get('company', 'Unkown_Company')
         role = metadata.get('role', 'Data_Analyst')
 
