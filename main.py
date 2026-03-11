@@ -32,7 +32,7 @@ def main():
         os.makedirs(output_dir, exist_ok=True)
 
         # Use .get() to prevent KeyErrors if the AI misses a field
-        raw_name = res.get('metadata',{}.get('file_name', 'tailored_cv')
+        raw_name = res.get('metadata',{}.get('file_name', 'tailored_cv'))
         clean_name = re.sub(r'[^a-zA-Z0-9]', '_', raw_name).strip('_').low()
         filename = f"{clean_name}.md"
         filepath = os.path.join(output_dir, filename)
