@@ -15,40 +15,48 @@ def main():
     master_text = extract_text_from_docx("MASTER CV.docx")
 
     # 2. Process all screenshots in folder
-    screenshots = [f for f in os.listdir("job_screenshots") if f.endswith((".png", ".jpg", "jpeg"))]
+    shot_dir = "job_screenshots"
+    if not os.path.exists(shot_dir):
+        os.makedirs(shot_dir)
+        print(f"Created {shot_dir} folder. Please add your screenshot there.")
+
+    screenshots = [f for f in os.listdir(shot_dir) if f.lower().endswith((".png", ".jpg", "jpeg"))]
 
     for shot in screenshots:
-        print(f"Processing {shot}...")
-        result = agent.analyze_and_tailor(master_text, f"job_screenshots/{shot}")
+        print(f"\n--- Processing {shot} ---")
+        # The agent returns a dictionary (the JSON response)
+        result = agent.analyze_and_tailor(master_text, os.path.join(shot_dir, shot))
 
-        # Save generated files
-        # (Using a simple split for metadata, e.g., 'Google|AI_Engineer')
-        meta_parts = result['cv_md'].split("|")
-        company = meta_parts[0] if len(meta_parts) > 0 else "Unkown"
-        role = meta_parts[1] if len(meta_parts) > 1 else "Role"
-
-        # Write tailored CV and Prep files
+        # Setup Output Dictionary
         output_dir = "output/cvs"
         os.makedirs(output_dir, exist_ok=True)
 
-        # Use .get() to prevent KeyErrors if the AI misses a field
-        raw_name = res.get('metadata',{}.get('file_name', 'tailored_cv'))
+        # Extract Data and Sanitize Filename
+        meta_parts = result.get('metadata', {})
+        company = metadata.get('company', 'Unkown_Company')
+        role = metadata.get('role', 'Data_Analyst')
+
+        # Create a clean filename
+        raw_name = f"{company}_{role}"
         clean_name = re.sub(r'[^a-zA-Z0-9]', '_', raw_name).strip('_').low()
         filename = f"{clean_name}.md"
         filepath = os.path.join(output_dir, filename)
 
+        # Write the file
         try:
+            cv_content = result.get('cv_md', 'No content generated.')
             with open(filepath, "w", encoding="utf-8") as f:
-                f.write(res.get('cv_md', ''))
+                f.write(cv_content)
             print(f"✅ SUCCESS: File written to --> {os.path.abspath(filepath)}")
-        except Expeption as e:
-            print(f"❌ FAILED to write file: {e}")
-        # ---TO HERE ---
 
-        # Log it
-        log_to_csv("Application_Tracker.cs", company, role, "Check Prep File")
+            # Log it only if written succeeded
+            log_to_csv("Application_Tracker.csv", company, role, "Tailored CV Generated")
+
+        except Expeption as e:
+            print(f"❌ FAILED to write file: {filename}: {e}")
 
     # 3. Final GIT Sync (Only code and CSV log)
+    print("\nSynching to GitHub...")
     git_push_updates(".", "Agentic Update: New application processed")
     print("All jobs processed and synced to Git!")
 
