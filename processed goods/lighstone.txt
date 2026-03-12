@@ -1,0 +1,72 @@
+About the job
+This job is sourced from a job board. Learn More
+Role Overview
+
+Data Analyst will be part of a team that conducts regular and adhoc data projects
+Data Analyst required to implement and maintain solutions including data sourcing, data transformation using SQL
+Data Analyst will be communicating with client and end-user to determine purpose and end solution requirements
+The role will also cover data extraction and data manipulation to fulfil client requirements, including adhoc requests, documentation, effective communication with external clients and internal stakeholders
+Investigation, design, and implementation of improvements to existing processes
+Ad-hoc queries relating to broad spectrum data and products 
+Documenting and general maintenance of processes 
+Combine raw data from multiple sources and explore ways to enhance data quality and reliability 
+Prepare data for prescriptive and predictive modelling and collaborate with data scientists and architects on projects 
+Identify and interpret trends and patterns 
+Build data systems (ETLs) and pipelines with proper data governance in line with the overall organizational strategy 
+
+Requirements
+
+Qualification & Experience
+
+National Diploma: Information Technology (IT – Software Development) 
+BSC (Maths, Stats, Comp science) 
+Solid experience in all Microsoft products (SQL, SSMS, Visual Studio, SSIS, VS code, Azure) 
+Knowledge and experience in R and Python 
+Ability to adapt to different programming tools based on project at hand 
+Proficient in automation of processes and troubleshooting 
+MCSE Certificate-Data Management and Analytics or Business Intelligence
+ 5-8 Years relevant experience 
+
+Technical Skills
+
+Experienced in SQL database design 
+Understand the concepts, principles, and implementation of data modelling, design, governance, and data management 
+Skilled at gathering, cleaning, enriching, and transforming data into the desired format to incorporate better decision-making in less time 
+Understand the processes, roles, policies, standards, and metrics that ensure the effective and efficient use of data/information
+
+Non-technical Skills
+
+Analytical and problem-solving skills: Data analysts work with large amounts of data: facts, figures, and number crunching. You will need to see through the data and analyse it to find conclusions. 
+Ability to work well in a team as well as individually 
+Communication Skills - written and verbal: Data analysts are often called to present their findings or translate the data into an understandable document. You will need to write and speak clearly, easily communicating complex ideas. 
+Ability to accurately estimate work required on tasks, prioritise work and deliver to deadlines. An analyst who has a natural inclination to work in a very structured way and to structure and prioritise activities carefully is more likely to succeed. 
+Critical Thinking: Data analysts must look at the numbers, trends, and data and come to new conclusions based on the findings. 
+Attention to detail and passionate about data. A methodical and logical approach. Data is precise. Data analysts must make sure they are vigilant in their analysis to come to correct conclusions. 
+Excited about learning, pushing technical limits and finding new solutions 
+Math Skills: Data analysts need math skills to estimate numerical data. 
+Positive outlook on life, work, and other people 
+Able to think creatively outside the box 
+Create and deliver value to the greater team and company
+
+Benefits
+
+What we offer
+
+Provident Fund, Life and Disability Insurance
+Professional Development/Study Assistance
+Training and Progression: There is a strong emphasis on skill development, career progression, and "care and growth"
+Hybrid working arrangement
+Office Perks: In-office benefits have included "wellness days" and monthly "Braai day" celebrations
+Leave: 25-days annual leave entitlement
+2-month paid sabbatical every 5 years of continued service
+Employee Wellness Programme
+
+About The Company
+
+Lightstone is an intelligent solutions company with strong, industry-specific expertise and core capabilities in data management, GIS, analytics and software development.
+
+We specialize in delivering integrated, online knowledge solutions, batch and realtime data quality solutions, and a broad range of geo-spatial and analytic projects to a range of property, business to consumer, government and financial services clients.
+
+We hire exceptional people and provide them with the environment where they can excel. Our non-corporate culture encourages flexibility, collaboration and innovation.
+
+We pride ourselves in our core values to Encourage Participation, Respond to Changing Needs and Win Together, which are reflected in each development, project, product or service we undertake to deliver.
