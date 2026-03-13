@@ -38,19 +38,31 @@ def convert_md_to_pdf(md_content, output_put):
     pdf = FPDF ()
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
-    
-    # Standard Body Font
     pdf.set_font("helvetica", size=10)
-    
-    for line in md_content.split('\n'):
+
+    # Clean text for PDF compatibility, replacing common emojis with text labels
+    replacements = {
+        "📍": "Location:",
+        "📧": "Email:",
+        "📞": "Phone:",
+        "🔗": "Link:",
+        "💼": "Experience:",
+        "🎓": "Education:"
+    }
+
+    clean_content = md_content
+    for emoji, text in replacements.items():
+        clean_content = clean_content.replace(emoji,text)
+
+    for line in clean_content.split('\n'):
+        safe_line = line.encode('latin-1', 'replace').decode('latin-1')
+
         # Basic Heading check (lines starting with #)
-        if line.startswith('#'):
+        if safe_line.startswith('#'):
             pdf.set_font("helvetica", 'B', 14)
-            clean_line = line.lstrip('#').strip()
-            pdf.multi_cell(0, 10, clean_line)
-            pdf.ln(2)
+            pdf.multi_cell(0, 10, safe_line.lstrip('#').strip())
             pdf.set_font("helvetica", size=10)
-            
+
         # Bold Text Check (looking for **text**)
         elif "**" in line:
             # This regex splits the line parts: normal and bold
