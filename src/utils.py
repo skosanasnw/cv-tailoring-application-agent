@@ -60,7 +60,7 @@ def convert_md_to_pdf(md_content, output_put):
                     pdf.set_font("helvetica", 'B', 10)
                     pdf.write(5, part.replace('**', ''))
                 else:
-                    pdf.set_font("helvetica", siza=10)
+                    pdf.set_font("helvetica", size=10)
                     pdf.write(5, part)
                 pdf.ln(6)
         
