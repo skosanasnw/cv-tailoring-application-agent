@@ -34,7 +34,7 @@ def git_push_updates(repo_path: str, message: str):
     # origin = repo.remote(name='origin')
     # origin.push()
     
-def convert_md_to_pdf(md_content, output_put):
+def convert_md_to_pdf(md_content, output_path):
     pdf = FPDF ()
     pdf.add_page()
     pdf.set_auto_page_break(auto=True, margin=15)
