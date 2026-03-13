@@ -1,46 +1,54 @@
 # SIHLE SKOSANA
 
 **Data Analyst | Python | SQL | Business Intelligence | Automation**
+*Turning Data Into Business Decisions*
 
 📍 Gauteng, South Africa | 📞 [Phone] | 📧 [Email] | 🔗 LinkedIn: [Link] | 💻 GitHub: [Link]
 
+---
+
 ### Professional Summary
 
-Analytical and detail-oriented professional with a strong foundation in data analysis, process optimization, and business intelligence. Proven ability to analyze customer data to identify trends, present findings clearly to stakeholders, and support strategic decision-making. Eager to leverage technical skills in Python and SQL to contribute to Procter & Gamble’s data-driven culture and support the organization’s commitment to serving 5 billion consumers.
+Analytical professional with a strong foundation in data analysis, process automation, and business intelligence. Proven ability to analyze customer data to identify patterns, support strategic decision-making, and improve operational efficiency. Committed to data accuracy, stewardship, and collaborating within team environments to achieve organizational objectives. Eager to leverage technical skills in Python and SQL to contribute to P&G’s mission of serving consumers globally.
+
+---
 
 ### Core Competencies
 
 *   **Data Analysis:** Exploratory Data Analysis (EDA), Trend Identification, Data Cleaning & Wrangling.
-*   **Technical Tools:** Python (Pandas, NumPy), SQL (MySQL), Tableau, Automation (Selenium).
-*   **Business Acumen:** Customer Data Insights, Operational Reporting, Process Optimization, Stewardship & Compliance.
-*   **Soft Skills:** Effective Communication, Team Collaboration, Eagerness to Learn, Problem Solving.
+*   **Technical Tools:** Python (Pandas, NumPy), SQL (MySQL), Tableau, Git, Bash.
+*   **Business Impact:** Customer Data Analysis, Process Optimisation, Automation, Stakeholder Communication.
+*   **Stewardship:** Compliance-focused reporting, attention to detail, and adherence to internal standards.
+
+---
 
 ### Professional Experience
 
 **Operations & Data Analyst** | Olsens Auto Imports (PTY) LTD | 2021 – Present
-
-*   Analyze customer datasets to identify patterns and trends, providing actionable insights that guide business strategy and revenue growth.
-*   Present complex data analysis findings in a clear, concise manner to leadership to support informed decision-making.
-*   Collaborate with cross-functional teams to achieve shared operational goals and implement new process improvements.
-*   Ensure strict compliance with internal stewardship requirements and regulatory documentation.
-*   Automated client communication and data tracking processes, significantly improving data accuracy and operational efficiency.
+*   Analyze customer datasets to identify behavioral patterns and trends, directly informing sales and sourcing strategies.
+*   Present data-driven findings to leadership to guide strategic decisions and support business objectives.
+*   Ensure data accuracy and maintain compliance with internal stewardship and regulatory requirements.
+*   Automated client communication processes using Python, reducing manual workload and improving engagement efficiency.
+*   Collaborate with cross-functional teams to implement new systems and achieve shared operational goals.
 
 **Administrative & Auction Support** | Nuvonic 891 | 2014 – 2021
+*   Managed high-volume data capture and invoicing, ensuring strict adherence to administrative controls and compliance documentation.
+*   Developed foundational expertise in data organization and customer management within a fast-paced environment.
+*   Supported team members in auction operations, strengthening commercial awareness and communication skills.
 
-*   Managed high-volume data capture and invoicing, ensuring data integrity and accuracy.
-*   Maintained compliance documentation and administrative controls, demonstrating a strong awareness of stewardship requirements.
-*   Supported customer interactions, strengthening commercial awareness and the ability to communicate effectively in a team environment.
+---
 
 ### Projects
 
-*   **Customer Behavior Analysis:** Extracted and analyzed a dataset of 20,000+ customers to identify purchasing trends, directly informing targeted marketing strategies.
-*   **Financial Analytics Dashboard:** Developed an interactive application to visualize key performance indicators, supporting data-driven business insight generation.
-*   **Automation Tools:** Built Python-based automation tools to streamline data collection and client outreach, reducing manual workload and improving data consistency.
+*   **Customer Behavior Analysis:** Extracted and cleaned customer data to identify trends, resulting in a targeted campaign that achieved 4x performance growth.
+*   **Automation Systems:** Developed Python-based tools to streamline data-heavy processes, ensuring accuracy and scalability.
+*   **Financial Analytics Dashboard:** Built interactive visualizations to support business insight generation and executive reporting.
+
+---
 
 ### Education & Certifications
 
 *   **Data Science Bootcamp** — HyperionDev (Graduated 1st in class)
 *   **SQL (MySQL) for Data Analytics & Business Intelligence**
 *   **Hands-On Hadoop Big Data**
-*   **Bash Shell Scripting**
-*   **CS50 Introduction to Cybersecurity** — In Progress
+*   **CS50 Introduction to Cybersecurity** (In Progress)

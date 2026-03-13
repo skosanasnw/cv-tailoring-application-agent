@@ -2,7 +2,13 @@ import os
 import re
 from dotenv import load_dotenv
 from src.agent_logic import JobTailorAgent
-from src.utils import extract_text_from_docx, log_to_csv, git_push_updates
+from src.utils import (
+    extract_text_from_docx,
+    log_to_csv,
+    git_push_updates,
+    save_cv_md,
+    convert_md_to_pdf
+)
 
 load_dotenv()
 

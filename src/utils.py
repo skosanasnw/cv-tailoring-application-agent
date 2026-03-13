@@ -69,3 +69,8 @@ def convert_md_to_pdf(md_content, output_put):
             pdf.multi_cell(0, 5, line)
             pdf.ln(2)
     pdf.output(output_path)
+
+def save_cv_md(content: str, filepath: str):
+    """"Save the generated CV text to a markdown file."""
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(content)
