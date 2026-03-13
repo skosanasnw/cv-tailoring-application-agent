@@ -6,37 +6,36 @@
 
 ### Professional Summary
 
-Analytical and detail-oriented professional with a strong foundation in data analysis, process optimization, and business intelligence. Proven ability to analyze customer data to identify patterns, trends, and actionable insights that guide strategic decision-making. Adept at collaborating within team environments to achieve shared goals and committed to maintaining high standards of data stewardship and compliance. Seeking to leverage technical skills in Python, SQL, and data visualization to contribute to P&G’s mission of improving consumer lives.
+Analytical and detail-oriented professional with a strong foundation in data analysis and a passion for driving business objectives through data-driven insights. Proven ability to analyze customer data, identify trends, and present findings to support strategic decision-making. Adept at collaborating within team environments and committed to maintaining high standards of data stewardship and compliance. Eager to leverage technical skills in Python, SQL, and data visualization to contribute to the success of Procter & Gamble.
 
 ### Core Competencies
 
-*   **Data Analysis:** Exploratory Data Analysis (EDA), Trend Identification, Customer Data Segmentation.
-*   **Technical Tools:** Python (Pandas, NumPy), SQL (MySQL), Tableau, Data Wrangling.
-*   **Business Impact:** Process Optimization, Automation, Stakeholder Communication, Executive Reporting.
-*   **Stewardship:** Compliance, Data Accuracy, Regulatory Awareness, Risk Management.
+*   **Data Analysis:** Exploratory Data Analysis (EDA), Trend Identification, Data Cleaning & Wrangling.
+*   **Technical Tools:** Python (Pandas, NumPy), SQL (MySQL), Tableau, Automation (Selenium).
+*   **Business Skills:** Stakeholder Communication, Operational Decision Support, Process Optimization, Stewardship & Compliance.
 
 ### Professional Experience
 
 **Operations & Data Analyst** | Olsens Auto Imports (PTY) LTD | 2021 – Present
 
-*   Analyze complex customer datasets to identify behavioral patterns, directly informing sales strategies and business objectives.
-*   Present data-driven findings to leadership to support strategic decision-making and operational improvements.
-*   Automate data collection and reporting processes using Python, ensuring data accuracy and efficiency.
-*   Collaborate with cross-functional teams to implement new systems and drive organizational growth.
-*   Ensure strict adherence to internal stewardship requirements and regulatory compliance in all data handling processes.
-*   Leverage SQL and Python to extract and clean data, transforming raw information into actionable business intelligence.
+*   Analyze customer datasets to identify patterns and trends, providing actionable insights that guide strategic decisions.
+*   Present complex data analysis findings in a clear, concise manner to leadership to support business objectives.
+*   Collaborate with cross-functional team members to achieve shared operational and revenue goals.
+*   Ensure strict compliance with internal stewardship requirements and data accuracy standards.
+*   Automated client communication processes using Python, improving efficiency and data consistency.
+*   Support the development and implementation of new operational ideas under guidance.
 
 **Administrative & Auction Support** | Nuvonic 891 | 2014 – 2021
 
-*   Managed high-volume data capture and invoicing, maintaining rigorous standards for data accuracy.
-*   Supported customer-facing operations, developing strong communication skills and commercial awareness.
-*   Maintained compliance documentation and administrative controls, ensuring alignment with organizational policies.
+*   Managed high-volume data capture and invoicing, ensuring data integrity and accuracy.
+*   Maintained compliance documentation and administrative controls in a fast-paced environment.
+*   Developed strong communication skills by supporting customer interactions and team coordination.
 
 ### Projects
 
-*   **Customer Behavior Analysis:** Extracted and analyzed 20,000+ customer records to identify trends, resulting in a 4x increase in sales performance through targeted outreach.
-*   **Automation & Efficiency:** Developed Python-based automation tools to streamline client communication and data processing, reducing manual workload and improving data consistency.
-*   **Financial Analytics Dashboard:** Built interactive dashboards using Streamlit to visualize key performance indicators, supporting real-time business insight generation.
+*   **Customer Behavior Analysis:** Extracted and cleaned customer data to identify trends, directly informing marketing and sales strategies.
+*   **Financial Analytics Dashboard:** Developed interactive visualizations to support business insight generation and decision-making.
+*   **Automation Tools:** Built Python-based tools to streamline data-heavy processes, reducing manual error and improving data reliability.
 
 ### Education & Certifications
 

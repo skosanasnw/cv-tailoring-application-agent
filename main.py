@@ -85,7 +85,7 @@ def main():
         filename = f"{company}_{role}.md"
 
         # Define the Path where file will be saved
-        me_filepath = os.path.join("output", "cvs", filename)
+        md_filepath = os.path.join("output", "cvs", filename)
 
         # Save file
         save_cv_md(result["cv_md"], md_filepath)
