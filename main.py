@@ -71,5 +71,15 @@ def main():
     git_push_updates(".", "Agentic Update: New application processed")
     print("All jobs processed and synced to Git!")
 
+    # Markdown to PDF conversion
+    if result and "cv_md" in result:
+        # Save MD version
+        save_cv_md(result["cv_md"], md_filepath)
+
+        # New: Save PDF version
+        pdf_filepath = md_filepath.replace(".md", ".pdf")
+        convert_md_to_pdf(result["cv_md"], pdf_filepath)
+        print(f"✅ PDF Created: {pdf_filepath}")
+
 if __name__=="__main__":
     main()
