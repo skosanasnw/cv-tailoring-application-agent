@@ -37,7 +37,7 @@ def git_push_updates(repo_path: str, message: str):
 def convert_md_to_pdf(md_content, output_put):
     pdf = FPDF ()
     pdf.add_page()
-    pdf.set_auto_page_break(auto-True, margin=15)
+    pdf.set_auto_page_break(auto=True, margin=15)
     
     # Standard Body Font
     pdf.set_font("helvetica", size=10)
