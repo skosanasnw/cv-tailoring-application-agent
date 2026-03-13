@@ -40,34 +40,22 @@ def convert_md_to_pdf(md_content, output_put):
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.set_font("helvetica", size=10)
 
-    # Clean text for PDF compatibility, replacing common emojis with text labels
-    replacements = {
-        "📍": "Location:",
-        "📧": "Email:",
-        "📞": "Phone:",
-        "🔗": "Link:",
-        "💼": "Experience:",
-        "🎓": "Education:",
-        "💻": "Laptop"
-    }
 
-    clean_content = md_content
-    for emoji, text in replacements.items():
-        clean_content = clean_content.replace(emoji,text)
-
-    for line in clean_content.split('\n'):
-        safe_line = line.encode('latin-1', 'replace').decode('latin-1')
+    for line in md_content.split('\n'):
+        #Remove  chars that aren't standard Latin-1 ('💻','📍', etc.)
+        safe_line = "".join(c for c in line if ord(c) < 256)
 
         # Basic Heading check (lines starting with #)
         if safe_line.startswith('#'):
             pdf.set_font("helvetica", 'B', 14)
             pdf.multi_cell(0, 10, safe_line.lstrip('#').strip())
+            pdf.ln(2)
             pdf.set_font("helvetica", size=10)
 
         # Bold Text Check (looking for **text**)
         elif "**" in line:
             # This regex splits the line parts: normal and bold
-            parts = re.split(r'(\*\*.*?\*\*)', line)
+            parts = re.split(r'(\*\*.*?\*\*)', safe_line)
             for part in parts:
                 if part.startswith('**') and part.endswith('**'):
                     pdf.set_font("helvetica", 'B', 10)
@@ -79,7 +67,7 @@ def convert_md_to_pdf(md_content, output_put):
         
         # Regular lines
         else:
-            pdf.multi_cell(0, 5, line)
+            pdf.multi_cell(0, 5, safe_line)
             pdf.ln(2)
     pdf.output(output_path)
 
