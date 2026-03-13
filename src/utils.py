@@ -47,7 +47,8 @@ def convert_md_to_pdf(md_content, output_put):
         "📞": "Phone:",
         "🔗": "Link:",
         "💼": "Experience:",
-        "🎓": "Education:"
+        "🎓": "Education:",
+        "💻": "Laptop"
     }
 
     clean_content = md_content
