@@ -40,42 +40,39 @@ def convert_md_to_pdf(md_content, output_path):
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.set_font("helvetica", size=10)
 
+    # Remove  chars that aren't standard Latin-1 ('💻','📍', etc.)
+    clean_content = "".join(c for c in line if ord(c) < 256)
 
     for line in md_content.split('\n'):
-        #Remove  chars that aren't standard Latin-1 ('💻','📍', etc.)
-        safe_line = "".join(c for c in line if ord(c) < 256).strip()
+        # safe_line = "".join(c for c in line if ord(c) < 256).strip()
         if not safe_line:
-            pdf.ln(2)
+            line = line.strip()
+            if not line:
+                pdf.ln(2)
             continue
 
         # Basic Heading check (lines starting with #)
         if safe_line.startswith('#'):
-            pdf.ln(5) #Add extra space BEFORE  a new section
+            pdf.ln(4) #Add extra space BEFORE  a new section
             pdf.set_font("helvetica", 'B', 12)
-            pdf.multi_cell(0, 8, safe_line.lstrip('#').strip().upper()) # UPPERCASE headers
-            pdf.line(pdf.get_x(), pdf.get_y(), 200, pdf.get_y()) # Optional: Add line under headers
-            pdf.ln(2)
+            pdf.multi_cell(0, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
             pdf.set_font("helvetica", size=10)
 
         # Bold Text Check (looking for **text**)
-        elif "**" in safe_line:
-            # This regex splits the line parts: normal and bold
-            parts = re.split(r'(\*\*.*?\*\*)', safe_line)
-            for part in parts:
-                if pdf.get_x() > 170:
-                    pdf.ln(6)
+        # elif "**" in safe_line:
+        #     # This regex splits the line parts: normal and bold
+        #     parts = re.split(r'(\*\*.*?\*\*)', safe_line)
+        #     for part in parts:
+        #         if pdf.get_x() > 170:
+        #             pdf.ln(6)
+        #
+        #         if part.startswith('**') and part.endswith('**'):
+        #             pdf.set_font("helvetica", 'B', 10)
+        #             pdf.write(5, part.replace('**', ''))
 
-                if part.startswith('**') and part.endswith('**'):
-                    pdf.set_font("helvetica", 'B', 10)
-                    pdf.write(5, part.replace('**', ''))
-                else:
-                    pdf.set_font("helvetica", size=10)
-                    pdf.write(6, part)
-                pdf.ln(6) # Move to next line
-        
         # Regular lines with better line-height
         else:
-            pdf.multi_cell(0,6, safe_line)
+            pdf.multi_cell(0,6, safe_line, markdown=True)
     pdf.output(output_path)
 
 def save_cv_md(content: str, filepath: str):
