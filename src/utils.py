@@ -47,13 +47,15 @@ def convert_md_to_pdf(md_content, output_path):
 
         # Basic Heading check (lines starting with #)
         if safe_line.startswith('#'):
-            pdf.set_font("helvetica", 'B', 14)
-            pdf.multi_cell(0, 10, safe_line.lstrip('#').strip())
+            pdf.ln(5) #Add extra space BEFORE  a new section
+            pdf.set_font("helvetica", 'B', 12)
+            pdf.multi_cell(0, 8, safe_line.lstrip('#').strip().upper()) # UPPERCASE headers
+            pdf.line(pdf.get_x(), pdf.get_y(), 200, pdf.get_y()) # Optional: Add line under headers
             pdf.ln(2)
             pdf.set_font("helvetica", size=10)
 
         # Bold Text Check (looking for **text**)
-        elif "**" in line:
+        elif "**" in safe_line:
             # This regex splits the line parts: normal and bold
             parts = re.split(r'(\*\*.*?\*\*)', safe_line)
             for part in parts:
@@ -65,10 +67,12 @@ def convert_md_to_pdf(md_content, output_path):
                     pdf.write(5, part)
                 pdf.ln(6)
         
-        # Regular lines
+        # Regular lines with better line-height
         else:
-            pdf.multi_cell(0, 5, safe_line)
-            pdf.ln(2)
+            if safe_line.strip(): # Don't print empty lines as cells
+                pdf.multi_cell(0, 6, safe_line)
+            else:
+                pdf.ln(2)
     pdf.output(output_path)
 
 def save_cv_md(content: str, filepath: str):
