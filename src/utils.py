@@ -43,7 +43,10 @@ def convert_md_to_pdf(md_content, output_path):
 
     for line in md_content.split('\n'):
         #Remove  chars that aren't standard Latin-1 ('💻','📍', etc.)
-        safe_line = "".join(c for c in line if ord(c) < 256)
+        safe_line = "".join(c for c in line if ord(c) < 256).strip()
+        if not safe_line:
+            pdf.ln(2)
+            continue
 
         # Basic Heading check (lines starting with #)
         if safe_line.startswith('#'):
@@ -59,13 +62,16 @@ def convert_md_to_pdf(md_content, output_path):
             # This regex splits the line parts: normal and bold
             parts = re.split(r'(\*\*.*?\*\*)', safe_line)
             for part in parts:
+                if pdf.get_x() > 170:
+                    pdf.ln(6)
+
                 if part.startswith('**') and part.endswith('**'):
                     pdf.set_font("helvetica", 'B', 10)
                     pdf.write(5, part.replace('**', ''))
                 else:
                     pdf.set_font("helvetica", size=10)
-                    pdf.write(5, part)
-                pdf.ln(6)
+                    pdf.write(6, part)
+                pdf.ln(6) # Move to next line
         
         # Regular lines with better line-height
         else:
