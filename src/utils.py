@@ -75,10 +75,7 @@ def convert_md_to_pdf(md_content, output_path):
         
         # Regular lines with better line-height
         else:
-            if safe_line.strip(): # Don't print empty lines as cells
-                pdf.multi_cell(0, 6, safe_line)
-            else:
-                pdf.ln(2)
+            pdf.multi_cell(0,6, safe_line)
     pdf.output(output_path)
 
 def save_cv_md(content: str, filepath: str):
