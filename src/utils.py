@@ -41,10 +41,10 @@ def convert_md_to_pdf(md_content, output_path):
     pdf.set_font("helvetica", size=10)
 
     # Remove  chars that aren't standard Latin-1 ('💻','📍', etc.)
-    safe_line = "".join(c for c in line if ord(c) < 256)
+    # clean_content = "".join(c for c in line if ord(c) < 256)
 
     for line in md_content.split('\n'):
-        # safe_line = "".join(c for c in line if ord(c) < 256).strip()
+        safe_line = "".join(c for c in line if ord(c) < 256).strip()
         if not safe_line:
             line = line.strip()
             if not line:
