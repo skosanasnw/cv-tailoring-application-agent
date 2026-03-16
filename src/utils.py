@@ -63,7 +63,7 @@ def convert_md_to_pdf(md_content, output_path):
         elif safe_line.startswith('_') or safe_line.startswith('*'):
             pdf.set_x(15)
             # Replace the MD  bullet with a clean dot and use markdown=True for bolding
-            clean_bullet = "• " + safe_line[1:].strip()
+            clean_bullet = char(149) + " " + safe_line[1:].strip()
             pdf.multi_cell(175, 6, clean_bullet, markdown=True)
 
         # Regular lines with better line-height
