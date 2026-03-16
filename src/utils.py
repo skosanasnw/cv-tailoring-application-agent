@@ -42,7 +42,7 @@ def convert_md_to_pdf(md_content, output_path):
 
     # Dynamic Detail extraxion: Take first 3 lines for the header
     lines = md_content.split('\n')
-    header_ines = [line.strip().replace('#', '').replace('*', '') for line in lines if line.strip()[:3]]
+    header_lines = [line.strip().replace('#', '').replace('*', '') for line in lines if line.strip()[:3]]
 
     while len(header_ines) < 3:
         header_ines.append("")
