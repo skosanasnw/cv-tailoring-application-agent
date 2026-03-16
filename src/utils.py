@@ -40,11 +40,37 @@ def convert_md_to_pdf(md_content, output_path):
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.set_font("helvetica", size=10)
 
-    # Remove  chars that aren't standard Latin-1 ('💻','📍', etc.)
-    # clean_content = "".join(c for c in line if ord(c) < 256)
+    # Dynamic Detail extraxion: Take first 3 lines for the header
+    lines = md_content.split('\n')
+    header_ines = [line.strip().replace('#', '').replace('*', '') for line in lines if line.strip()[:3]]
 
-    for line in md_content.split('\n'):
+    while len(header_ines) < 3:
+        header_ines.append("")
+
+    # Work on the Dynamic header
+    # Top line (name)- Big and centered
+    pdf.set_font("helvetica", "B", 20)
+    pdf.cell(0, 12, header_lines[0], ln=True, align='C')
+
+    # Second line (contact details/location)- Centered
+    pdf.set_font("helvetica", size=10)
+    pdf.cell(0, 6, header_lines[1], ln=True, align='C')
+
+    # Third line (email/links)- Centered
+    pdf.cell(0, 6, header_lines[2], ln=True, align='C')
+
+    pdf.ln(8) # Space before the rest of the CV
+    # ------------------------------------
+    body_started = False # Track when to start printing
+    for line in lines:
         safe_line = "".join(c for c in line if ord(c) < 256).strip()
+
+        # Skip if haven't reached heading
+        if not body_started:
+            if safe_line.startswith('#'):
+                body_started = True
+            else:
+                continue #Skip the contact info lines we used in the header
 
         # Reset horizontal position to the left  margin
         pdf.set_x(10)
@@ -60,10 +86,11 @@ def convert_md_to_pdf(md_content, output_path):
             pdf.multi_cell(190, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
             pdf.set_font("helvetica", size=10)
 
+        # Bullet Points (CHecking for - or *)
         elif safe_line.startswith('_') or safe_line.startswith('*'):
             pdf.set_x(15)
             # Replace the MD  bullet with a clean dot and use markdown=True for bolding
-            clean_bullet = chr(149) + " " + safe_line[1:].strip()
+            clean_bullet = chr(149) + " " + safe_line[1:].lstrip("-*").strip()
             pdf.multi_cell(175, 6, clean_bullet, markdown=True)
 
         # Regular lines with better line-height
