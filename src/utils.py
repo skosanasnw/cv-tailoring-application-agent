@@ -75,15 +75,10 @@ def convert_md_to_pdf(md_content, output_path):
 
         # Skip if haven't reached heading
         if not body_started:
-            if safe_line.startswith('#'):
-                # Check if heading is just the name
-                if header_lines[0].lower() in safe_line.lower():
-                    body_started = True
+            if safe_line.startswith('#') and header_lines[0].lower() not in safe_line.lower():
+                body_started = True
             else:
                 continue
-                
-        else:
-            continue #Skip the contact info lines we used in the header
 
         # Reset horizontal position to the left  margin
         pdf.set_x(10)
@@ -100,7 +95,7 @@ def convert_md_to_pdf(md_content, output_path):
             pdf.set_font("helvetica", size=10)
 
         # Bullet Points (CHecking for - or *)
-        elif safe_line.startswith('_') or safe_line.startswith('*'):
+        elif safe_line.startswith('-') or safe_line.startswith('*'):
             pdf.set_x(15)
             # Replace the MD  bullet with a clean dot and use markdown=True for bolding
             clean_bullet = chr(149) + " " + safe_line[1:].lstrip("-*").strip()
