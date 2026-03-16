@@ -76,10 +76,11 @@ def convert_md_to_pdf(md_content, output_path):
         # Skip if haven't reached heading
         if not body_started:
             if safe_line.startswith('#'):
+                # Check if heading is just the name
                 if header_lines[0].lower() in safe_line.lower():
-                    continue
+                    body_started = True
             else:
-                body_started = True
+                continue
                 
         else:
             continue #Skip the contact info lines we used in the header
