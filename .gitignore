@@ -17,3 +17,4 @@ __pycache__/
 *.png
 .env
 __pycache__/
+output/
