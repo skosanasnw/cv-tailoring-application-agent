@@ -46,6 +46,9 @@ def convert_md_to_pdf(md_content, output_path):
     for line in md_content.split('\n'):
         safe_line = "".join(c for c in line if ord(c) < 256).strip()
 
+        # Reset horizontal position to the left  margin
+        pdf.set_x(10)
+
         if not safe_line:
                 pdf.ln(2)
                 continue
@@ -54,15 +57,19 @@ def convert_md_to_pdf(md_content, output_path):
         if safe_line.startswith('#'):
             pdf.ln(4) #Add extra space BEFORE  a new section
             pdf.set_font("helvetica", 'B', 12)
-            pdf.multi_cell(180, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
+            pdf.multi_cell(190, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
             pdf.set_font("helvetica", size=10)
 
-        elif "**" in safe_line:
-            pdf.multi_cell(180, 6, safe_line, markdown=True)
+        elif safe_line.startswith('_') or safe_line.startswith('*'):
+            pdf.set_x(15)
+            # Replace the MD  bullet with a clean dot and use markdown=True for bolding
+            clean_bullet = "• " + safe_line[1:].strip()
+            pdf.multi_cell(175, 6, clean_bullet, markdown=True)
 
         # Regular lines with better line-height
         else:
-            pdf.multi_cell(180,6, safe_line)
+            pdf.multi_cell(190,6, safe_line, markdown=True)
+
     pdf.output(output_path)
 
 def save_cv_md(content: str, filepath: str):
