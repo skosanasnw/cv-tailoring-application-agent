@@ -44,8 +44,8 @@ def convert_md_to_pdf(md_content, output_path):
     lines = md_content.split('\n')
     header_lines = [line.strip().replace('#', '').replace('*', '') for line in lines if line.strip()[:3]]
 
-    while len(header_ines) < 3:
-        header_ines.append("")
+    while len(header_lines) < 3:
+        header_lines.append("")
 
     # Work on the Dynamic header
     # Top line (name)- Big and centered
