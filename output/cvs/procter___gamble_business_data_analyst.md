@@ -6,7 +6,7 @@
 
 ### Professional Summary
 
-Analytical and detail-oriented professional with a strong foundation in data analysis, process optimization, and business intelligence. Proven ability to analyze customer data to identify patterns, trends, and actionable insights that guide strategic decision-making. Adept at collaborating within team environments to achieve shared goals and committed to maintaining high standards of data stewardship and compliance. Seeking to leverage technical skills in Python, SQL, and data visualization to contribute to the data-driven culture at Procter & Gamble.
+Analytical and detail-oriented professional with a strong foundation in data analysis, process optimization, and business intelligence. Proven ability to analyze customer data to identify patterns, trends, and actionable insights that guide strategic decision-making. Adept at collaborating within team environments to achieve shared goals and committed to maintaining high standards of data stewardship and compliance. Eager to leverage technical skills in Python and SQL to support P&G’s mission of improving consumer lives.
 
 ### Core Competencies
 
@@ -19,24 +19,24 @@ Analytical and detail-oriented professional with a strong foundation in data ana
 
 **Operations & Data Analyst** | Olsens Auto Imports (PTY) LTD | 2021 – Present
 
-*   Analyze customer datasets to identify behavioral patterns, directly informing sales strategies and business objectives.
-*   Present complex data findings in clear, concise reports to leadership to guide operational decision-making.
-*   Collaborate with cross-functional teams to implement new systems and improve operational efficiency.
-*   Ensure data accuracy and compliance with internal stewardship requirements during all data processing tasks.
-*   Automated client communication workflows using Python, reducing manual effort and improving engagement scalability.
-*   Supervise team operations, acting as a bridge between data insights and practical business execution.
+*   Analyze complex customer datasets to identify behavioral patterns, directly informing sales strategies and business objectives.
+*   Present data analysis findings in clear, concise reports to leadership to guide operational decision-making.
+*   Ensure data accuracy and integrity while managing large-scale customer databases.
+*   Collaborate with cross-functional teams to implement new ideas and improve operational workflows.
+*   Maintain strict compliance with internal stewardship requirements and regulatory documentation.
+*   Automated client communication processes using Python, significantly reducing manual workload and improving data-driven engagement.
 
 **Administrative & Auction Support** | Nuvonic 891 | 2014 – 2021
 
-*   Managed high-volume data capture and invoicing, ensuring strict adherence to administrative controls and compliance documentation.
-*   Developed foundational expertise in customer management and commercial awareness within a fast-paced environment.
-*   Maintained data integrity across financial and operational records.
+*   Managed high-volume data capture and invoicing, ensuring meticulous attention to data accuracy.
+*   Supported customer interactions, building strong commercial awareness and communication skills.
+*   Maintained compliance documentation and administrative controls in a fast-paced environment.
 
 ### Projects
 
-*   **Customer Behavior Analysis:** Extracted and cleaned customer data to identify trends that drove record-breaking sales performance.
-*   **Automation Systems:** Developed Python-based tools to streamline data-driven communication, ensuring consistent and accurate outreach.
-*   **Financial Analytics Dashboard:** Built interactive visualizations to support business insight generation and strategic planning.
+*   **High-Impact Auction Analytics:** Extracted and cleaned customer data to identify trends, executing targeted outreach that drove record-breaking sales performance.
+*   **WhatsApp Automation System:** Developed a Python-based tool to streamline customer communication, demonstrating an eagerness to learn and implement new technical solutions.
+*   **Financial Analytics Dashboard:** Built an interactive application to visualize financial data, supporting data-driven insight generation.
 
 ### Education & Certifications
 

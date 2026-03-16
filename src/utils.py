@@ -76,10 +76,13 @@ def convert_md_to_pdf(md_content, output_path):
         # Skip if haven't reached heading
         if not body_started:
             if safe_line.startswith('#'):
-                body_started = True
-                continue
+                if header_lines[0].lower() in safe_line.lower():
+                    continue
             else:
-                continue #Skip the contact info lines we used in the header
+                body_started = True
+                
+        else:
+            continue #Skip the contact info lines we used in the header
 
         # Reset horizontal position to the left  margin
         pdf.set_x(10)
