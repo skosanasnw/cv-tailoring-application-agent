@@ -42,8 +42,16 @@ def convert_md_to_pdf(md_content, output_path):
 
     # Dynamic Detail extraxion: Take first 3 lines for the header
     lines = md_content.split('\n')
-    header_lines = [line.strip().replace('#', '').replace('*', '') for line in lines if line.strip()[:3]]
+    header_lines = []
+    for line in lines:
+        clean_line = "".join(c for c in line if ord(c) < 256).strip()
+        if clean_line:
+            # Remove MD markers like # or *
+            header_lines.append(clean_line.replace('#', '').replace('*', ''))
+        if len(header_lines) >= 3:
+            break
 
+    # Fill in blanks if the CV is too short
     while len(header_lines) < 3:
         header_lines.append("")
 
