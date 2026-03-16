@@ -2,7 +2,13 @@ import os
 import re
 from dotenv import load_dotenv
 from src.agent_logic import JobTailorAgent
-from src.utils import extract_text_from_docx, log_to_csv, git_push_updates
+from src.utils import (
+    extract_text_from_docx,
+    log_to_csv,
+    git_push_updates,
+    save_cv_md,
+    convert_md_to_pdf
+)
 
 load_dotenv()
 
@@ -70,6 +76,25 @@ def main():
     print("\nSynching to GitHub...")
     git_push_updates(".", "Agentic Update: New application processed")
     print("All jobs processed and synced to Git!")
+
+    # Markdown to PDF conversion
+    if result and "cv_md" in result:
+        # Create File Name
+        company = result['metadata']['company'].replace(" ", "_")
+        role = result['metadata']['role'].replace(" ","_")
+        filename = f"{company}_{role}.md"
+
+        # Define the Path where file will be saved
+        md_filepath = os.path.join("output", "cvs", filename)
+
+        # Save file
+        save_cv_md(result["cv_md"], md_filepath)
+
+        # Generate PDF
+        pdf_filepath = md_filepath.replace(".md", ".pdf")
+        convert_md_to_pdf(result["cv_md"], pdf_filepath)
+
+        print(f"✅ SUCCESS: File generated for {company}")
 
 if __name__=="__main__":
     main()
