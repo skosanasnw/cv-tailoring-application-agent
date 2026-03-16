@@ -4,3 +4,4 @@ pandas
 GitPython
 python-dotenv
 pytest
+fpdf2
