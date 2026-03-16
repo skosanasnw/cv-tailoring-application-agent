@@ -88,22 +88,22 @@ def convert_md_to_pdf(md_content, output_path):
                 continue
 
         # Basic Heading check (lines starting with #)
-        if safe_line.startswith('#'):
-            pdf.ln(4) #Add extra space BEFORE  a new section
-            pdf.set_font("helvetica", 'B', 12)
-            pdf.multi_cell(190, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
-            pdf.set_font("helvetica", size=10)
-
-        # Bullet Points (CHecking for - or *)
-        elif safe_line.startswith('_') or safe_line.startswith('*'):
-            pdf.set_x(15)
-            # Replace the MD  bullet with a clean dot and use markdown=True for bolding
-            clean_bullet = chr(149) + " " + safe_line[1:].lstrip("-*").strip()
-            pdf.multi_cell(175, 6, clean_bullet, markdown=True)
-
-        # Regular lines with better line-height
-        else:
-            pdf.multi_cell(190,6, safe_line, markdown=True)
+        # if safe_line.startswith('#'):
+        #     pdf.ln(4) #Add extra space BEFORE  a new section
+        #     pdf.set_font("helvetica", 'B', 12)
+        #     pdf.multi_cell(190, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
+        #     pdf.set_font("helvetica", size=10)
+        #
+        # # Bullet Points (CHecking for - or *)
+        # elif safe_line.startswith('_') or safe_line.startswith('*'):
+        #     pdf.set_x(15)
+        #     # Replace the MD  bullet with a clean dot and use markdown=True for bolding
+        #     clean_bullet = chr(149) + " " + safe_line[1:].lstrip("-*").strip()
+        #     pdf.multi_cell(175, 6, clean_bullet, markdown=True)
+        #
+        # # Regular lines with better line-height
+        # else:
+        #     pdf.multi_cell(190,6, safe_line, markdown=True)
 
     pdf.output(output_path)
 
