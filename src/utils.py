@@ -90,8 +90,28 @@ def convert_md_to_pdf(md_content, output_path):
         # Basic Heading check (lines starting with #)
         if safe_line.startswith('#'):
             pdf.ln(4) #Add extra space BEFORE  a new section
+
+            # --- Colour & Font Setting ---
+            pdf.set_text_colour(46, 80, 144) # Professional Navy Blue
             pdf.set_font("helvetica", 'B', 12)
-            pdf.multi_cell(190, 8, safe_line.lstrip('#').strip().upper(), align='L') # UPPERCASE headers
+
+           # Print the heading
+            heading_text = safe_line.lstrip('#').strip().upper()
+            pdf.multi_cell(190, 8, heading_text, align='L')
+
+            # Underline
+            pdf.set_draw_colour(46, 80, 144) # Match line colour to text
+            pdf.set_line_width(0.4) # Thicker font
+
+            # Pull line up 1.5mm
+            underline_y = pdf.get_y() - 1.5
+            pdf.line(10, underline_y, 200, underline_y)
+
+            # --- Reset for body text ---
+            pdf.set_text_colour(0, 0, 0) # Reset to black
+            pdf.set_draw_colour(0, 0, 0) # Reset to black
+            pdf.set_line_width(0.2) # Reset to standard thickness
+            pdf.ln(2)
             pdf.set_font("helvetica", size=10)
 
         # Bullet Points (CHecking for - or *)
