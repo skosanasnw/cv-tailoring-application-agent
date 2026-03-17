@@ -92,7 +92,7 @@ def convert_md_to_pdf(md_content, output_path):
             pdf.ln(4) #Add extra space BEFORE  a new section
 
             # --- Colour & Font Setting ---
-            pdf.set_text_colour(46, 80, 144) # Professional Navy Blue
+            pdf.set_text_color(46, 80, 144) # Professional Navy Blue
             pdf.set_font("helvetica", 'B', 12)
 
            # Print the heading
@@ -100,7 +100,7 @@ def convert_md_to_pdf(md_content, output_path):
             pdf.multi_cell(190, 8, heading_text, align='L')
 
             # Underline
-            pdf.set_draw_colour(46, 80, 144) # Match line colour to text
+            pdf.set_draw_color(46, 80, 144) # Match line colour to text
             pdf.set_line_width(0.4) # Thicker font
 
             # Pull line up 1.5mm
@@ -108,8 +108,8 @@ def convert_md_to_pdf(md_content, output_path):
             pdf.line(10, underline_y, 200, underline_y)
 
             # --- Reset for body text ---
-            pdf.set_text_colour(0, 0, 0) # Reset to black
-            pdf.set_draw_colour(0, 0, 0) # Reset to black
+            pdf.set_text_color(0, 0, 0) # Reset to black
+            pdf.set_draw_color(0, 0, 0) # Reset to black
             pdf.set_line_width(0.2) # Reset to standard thickness
             pdf.ln(2)
             pdf.set_font("helvetica", size=10)

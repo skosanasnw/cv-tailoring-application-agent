@@ -6,37 +6,37 @@
 
 ### Professional Summary
 
-Analytical and detail-oriented professional with a strong foundation in data analysis, process optimization, and business intelligence. Proven ability to analyze customer data to identify patterns, trends, and actionable insights that guide strategic decision-making. Adept at collaborating within team environments to achieve shared goals and committed to maintaining high standards of data stewardship and compliance. Seeking to leverage technical skills in Python, SQL, and data visualization to contribute to P&G’s mission of improving consumer lives.
+Analytical and detail-oriented professional with a strong foundation in data analysis and a passion for driving business objectives through data-driven insights. Proven ability to analyze customer data, identify trends, and present findings to support strategic decision-making. Adept at collaborating within team environments and committed to maintaining high standards of data stewardship and compliance. Eager to leverage technical skills in Python, SQL, and data visualization to contribute to P&G’s mission of improving consumer lives.
 
 ### Core Competencies
 
-*   **Data Analysis:** Exploratory Data Analysis (EDA), Trend Identification, Customer Data Segmentation.
-*   **Technical Tools:** Python (Pandas, NumPy), SQL (MySQL), Tableau, Data Cleaning & Wrangling.
-*   **Business Impact:** Revenue-focused analytics, Process optimization, Automation development, Stakeholder communication.
-*   **Stewardship:** Compliance awareness, Data accuracy, Regulatory documentation, Attention to detail.
+*   **Data Analysis:** Exploratory Data Analysis (EDA), Trend Identification, Data Cleaning & Wrangling.
+*   **Technical Tools:** Python (Pandas, NumPy), SQL (MySQL), Tableau, Git, Bash.
+*   **Business Acumen:** Customer Data Analysis, Process Optimization, Stakeholder Communication, Stewardship & Compliance.
+*   **Soft Skills:** Team Collaboration, Eagerness to Learn, Problem Solving, Clear Presentation of Findings.
 
 ### Professional Experience
 
 **Operations & Data Analyst** | Olsens Auto Imports (PTY) LTD | 2021 – Present
 
-*   Analyze customer datasets to identify behavioral patterns, directly informing sales strategies and business objectives.
-*   Present data analysis findings to leadership in a clear, concise manner to support strategic decision-making.
+*   Analyze customer datasets to identify patterns and trends, providing actionable insights that guide strategic business decisions.
+*   Present complex data analysis findings in a clear, concise manner to leadership to support revenue-generating initiatives.
+*   Ensure strict compliance with internal stewardship requirements and regulatory documentation.
 *   Collaborate with cross-functional teams to implement new ideas and improve operational efficiency.
-*   Ensure data accuracy and compliance with internal stewardship requirements while managing sensitive customer information.
-*   Automated large-scale client communication using Python, reducing manual workload and improving engagement consistency.
-*   Developed structured tracking systems to improve data visibility and arrears management.
+*   Automated client communication processes using Python, reducing manual workload and improving data accuracy.
+*   Developed structured tracking systems to improve data visibility and support informed decision-making.
 
 **Administrative & Auction Support** | Nuvonic 891 | 2014 – 2021
 
-*   Managed high-volume data capture and invoicing, ensuring strict adherence to administrative controls and compliance documentation.
-*   Supported auction operations by maintaining accurate records and providing data-driven insights for customer interactions.
-*   Developed strong operational discipline and a proactive approach to learning new systems and analytical techniques.
+*   Managed high-volume data capture and maintained rigorous administrative controls.
+*   Ensured compliance with documentation standards in a fast-paced environment.
+*   Developed foundational expertise in data organization and customer management.
 
 ### Projects
 
-*   **High-Impact Auction Analytics:** Extracted and cleaned customer data to execute targeted marketing campaigns, resulting in a 4x increase in performance.
-*   **Financial Analytics Dashboard:** Developed an interactive Streamlit application to visualize financial trends and support business insight generation.
-*   **WhatsApp Automation System:** Built a Python-based tool to streamline client communication, demonstrating an eagerness to innovate and improve business processes.
+*   **Customer Behavior Analysis:** Extracted and analyzed customer data to identify purchasing trends, directly informing marketing and sales strategies.
+*   **Financial Analytics Dashboard:** Developed interactive visualizations to support business insight generation and performance tracking.
+*   **Automation Tools:** Built Python-based tools to streamline data collection and communication, ensuring data consistency and efficiency.
 
 ### Education & Certifications
 
